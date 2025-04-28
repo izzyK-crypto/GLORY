@@ -23,7 +23,7 @@ body {
     transition: top 0.3s;
 }
 .tithe-button {
-    background: linear-gradient(135deg, #1aee48, #eaae22);
+    background: linear-gradient(135deg, #ee441a, #eaae22);
     color: white;
     border: none;
     padding: 14px 28px;
@@ -597,17 +597,12 @@ a:hover::after {
                     margin-bottom: 0;
                 }
                 .section-description {
-                    font-size: rem;
+                        font-size: 1.1rem;
                 }
             }
             @media (max-width: 480px) {
                 .section-title {
                     font-size: 1.5rem;
-                    position: relative;
-                    top: 5vh;
-                }
-                .section-description {
-                    font-size: 1.1rem;
                     position: relative;
                     top: 5vh;
                 }
@@ -919,7 +914,7 @@ a:hover::after {
         max-width: 360px;
         margin-top: -1vh;
         position: relative;
-        left: 18%;
+        left: 21%;
     }
     .intro-text {
       font-size: .9rem;
