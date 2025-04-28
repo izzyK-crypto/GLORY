@@ -164,7 +164,7 @@ body {
         top: 2vh;
       }
   }
-  }
+  
 
     /* video en text */
   .background-video {
@@ -228,14 +228,14 @@ body {
 
   @media (max-width: 768px) {
     .text-box {
-      font-size: 1.1rem;
+      font-size: 1rem;
       position: relative;
-      top: -45vh;
+      top: -14vh;
     }
     button {
       padding: 0.4em 0.8em;
       position: relative;
-      top: -46vh;
+      top: -19vh;
     }
     .thumbnail {
       width: 50px;
@@ -897,7 +897,7 @@ a:hover::after {
 .cla{
     margin: 0;
     position: relative;
-    top: -14vh;
+    top: -19vh;
 }
 .my-text {
     font-weight: 600;
@@ -905,7 +905,7 @@ a:hover::after {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     position: relative;
-    top: -12vh;
+    top: -18vh;
 }
 .my-te {
     font-weight: 600;
@@ -1072,9 +1072,9 @@ a:hover::after {
     }
     .cool img{
         width: 100%;
-        max-width: 170px;
+        max-width: 200px;
         position: relative;
-        top: -15vh;
+        top: -13vh;
     }
 }
 
