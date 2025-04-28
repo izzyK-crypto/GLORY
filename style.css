@@ -231,7 +231,7 @@ body {
     .text-box {
       font-size: 1.2rem;
       position: relative;
-      top: -13vh;
+      top: -17vh;
     }
     button {
       padding: 0.4em 0.8em;
@@ -715,7 +715,7 @@ a:hover::after {
                     max-width: 180px;
                     height: auto;
                     position: relative;
-                    top: -13vh;
+                    top: -15vh;
                     margin-left: 10%;
                   }
             }
