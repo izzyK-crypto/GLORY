@@ -189,7 +189,6 @@ body {
     font-size: 1.5rem;
     max-width: 90%;
     min-height: 4em;
-    font-family: 'Segoe UI', sans-serif;
   }
   .controls {
     margin-top: 1em;
@@ -231,7 +230,7 @@ body {
     .text-box {
       font-size: 1.2rem;
       position: relative;
-      top: -16vh;
+      top: -36vh;
     }
     button {
       padding: 0.4em 0.8em;
