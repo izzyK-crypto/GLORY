@@ -213,102 +213,109 @@
   
   
   <div class="cla">
-        <div class="class-tabs">
-            <div class="class-tab active" onclick="showClass(1)">Encounter</div>
-            <div class="class-tab" onclick="showClass(2)">Transformation</div>
-            <div class="class-tab" onclick="showClass(3)">Membership</div>
-            <div class="class-tab" onclick="showClass(4)">Evangelism</div>
-            <div class="class-tab" onclick="showClass(5)">Christology</div>
-        </div>
-        
-        <div class="class-container" id="classContent">
-            <div class="class-text">
-                <h2 id="classTitle">Encounter</h2>
-                <p id="classDesc"></p>
-            </div>
-            <div class="class-image">
-                <img id="classImage" src="4.jpg" alt="Web Development">
-            </div>
-        </div>
-        
-        <div class="class-details" id="classDetails">
-            <h2 id="detailTitle">Encounter with Christ</h2>
-            <p id="detailDesc">Experience a deep and personal relationship with Christ.</p>
-        </div>
-        
-        <div class="form-container" id="joinForm" style="display: block;">
-            <h3 id="formHeader">Request to join Encounter class!</h3>
-            <input type="text" id="fullName" placeholder="Full Name" required>
-            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
-            <select id="lineage">
-                <option value="">Select Lineage (Optional)</option>
-                <option value="No Lineage">No Lineage</option>
-                <option value="Esther">Esther</option>
-                <option value="Daniel">Daniel</option>
-                <option value="Solomon">Solomon</option>
-                <option value="Ephraim">Ephraim</option>
-                <option value="Joseph">Joseph</option>
-                <option value="Deborah">Deborah</option>
-                <option value="David">David</option>
-                <option value="Nehemiah">Nehemiah</option>
-                <option value="Joshua">Joshua</option>
-                <option value="Elijah">Elijah</option>
-                <option value="Moses">Moses</option>
-            </select>
-            <button onclick="submitForm()">Submit</button>
-        </div>
-        
+    <div class="class-tabs">
+        <div class="class-tab active" onclick="showClass(1)">Encounter</div>
+        <div class="class-tab" onclick="showClass(2)">Transformation</div>
+        <div class="class-tab" onclick="showClass(3)">Membership</div>
+        <div class="class-tab" onclick="showClass(4)">Evangelism</div>
+        <div class="class-tab" onclick="showClass(5)">Christology</div>
     </div>
-        
-        <script>
-            let currentClass = "Encounter Class";
-        
-            function showClass(classNumber) {
-                const content = [
-            { title: "Encounter", desc: "Experience a deep and personal relationship with Christ.", img: "4.jpg" },
-            { title: "Transformation", desc: "Grow spiritually and renew your mind through biblical teachings.", img: "3.jpg" },
-            { title: "Membership", desc: "Understand the values and beliefs of our church and become an active member.", img: "5.jpg" },
-            { title: "Evangelism", desc: "Learn how to effectively share the Gospel with others.", img: "img/am.jpg" },
-            { title: "Christology", desc: "Deepen your faith and become a committed leader with Christ virtues.", img: "7.jpg" }
-          ];
 
-                currentClass = content[classNumber - 1].title;
-                document.getElementById("classTitle").innerText = currentClass;
-                document.getElementById("classDesc").innerText = content[classNumber - 1].desc;
-                document.getElementById("classImage").src = content[classNumber - 1].img;
-                document.getElementById("classImage").alt = currentClass;
-                document.getElementById("detailTitle").innerText = currentClass;
-                document.getElementById("detailDesc").innerText = content[classNumber - 1].desc;
-            }
-        
-            function openForm() {
-                document.getElementById("joinForm").style.display = "block";
-            }
-        
-            function submitForm() {
-                let name = document.getElementById("fullName").value;
-                let phone = document.getElementById("phoneNumber").value;
-                let lineage = document.getElementById("lineage").value || "No Lineage";
-                
-                if (!name || !phone) {
-                    alert("Please fill in all required fields.");
-                    return;
-                }
-        
-                let message = `Hello, I would like to join the ${currentClass}.\nName: ${name}\nPhone: ${phone}\nLineage: ${lineage}`;
-                let whatsappNumber = "YOUR_WHATSAPP_NUMBER"; // Replace with your actual number
-                let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-                
-                window.open(whatsappLink, "_blank");
-                alert("Thank you! You will be contacted soon.");
-                document.getElementById("joinForm").style.display = "none";
+    <div class="class-container" id="classContent">
+        <div class="class-text">
+            <h2 id="classTitle">Encounter</h2>
+            <p id="classDesc"></p>
+        </div>
+        <div class="class-image">
+            <img id="classImage" src="img/4.jpg" alt="Web Development">
+        </div>
+    </div>
 
-                // Initialize the page
-               window.onload = function() {
-               document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
-  }
-            }
-        </script>
+    <div class="class-details" id="classDetails">
+        <h2 id="detailTitle">Encounter with Christ</h2>
+        <p id="detailDesc">Experience a deep and personal relationship with Christ.</p>
+    </div>
+
+    <div class="form-container" id="joinForm" style="display: block;">
+        <h3 id="formHeader">Request to join Encounter class!</h3>
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+        <select id="lineage">
+            <option value="">Select Lineage (Optional)</option>
+            <option value="No Lineage">No Lineage</option>
+            <option value="Esther">Esther</option>
+            <option value="Daniel">Daniel</option>
+            <option value="Solomon">Solomon</option>
+            <option value="Ephraim">Ephraim</option>
+            <option value="Joseph">Joseph</option>
+            <option value="Deborah">Deborah</option>
+            <option value="David">David</option>
+            <option value="Nehemiah">Nehemiah</option>
+            <option value="Joshua">Joshua</option>
+            <option value="Elijah">Elijah</option>
+            <option value="Moses">Moses</option>
+        </select>
+        <button onclick="submitForm()">Submit</button>
+    </div>
+</div>
+
+<script>
+    let currentClass = "Encounter"; // Default class
+    let classContent = [
+        { title: "Encounter", desc: "Experience a deep and personal relationship with Christ.", img: "img/4.jpg" },
+        { title: "Transformation", desc: "Grow spiritually and renew your mind through biblical teachings.", img: "img/3.jpg" },
+        { title: "Membership", desc: "Understand the values and beliefs of our church and become an active member.", img: "img/5.jpg" },
+        { title: "Evangelism", desc: "Learn how to effectively share the Gospel with others.", img: "img/am.jpg" },
+        { title: "Christology", desc: "Deepen your faith and become a committed leader with Christ virtues.", img: "img/7.jpg" }
+    ];
+
+    function showClass(classNumber) {
+        // Remove the active class from all tabs
+        const tabs = document.querySelectorAll(".class-tab");
+        tabs.forEach(tab => tab.classList.remove("active"));
+
+        // Add the active class to the clicked tab
+        const selectedTab = tabs[classNumber - 1];
+        selectedTab.classList.add("active");
+
+        // Update class content dynamically
+        currentClass = classContent[classNumber - 1].title;
+        document.getElementById("classTitle").innerText = currentClass;
+        document.getElementById("classDesc").innerText = classContent[classNumber - 1].desc;
+        document.getElementById("classImage").src = classContent[classNumber - 1].img;
+        document.getElementById("classImage").alt = currentClass;
+        document.getElementById("detailTitle").innerText = currentClass;
+        document.getElementById("detailDesc").innerText = classContent[classNumber - 1].desc;
+
+        // Update the form header dynamically based on the selected class
+        document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
+    }
+
+    function submitForm() {
+        let name = document.getElementById("fullName").value;
+        let phone = document.getElementById("phoneNumber").value;
+        let lineage = document.getElementById("lineage").value || "No Lineage";
+        
+        if (!name || !phone) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        let message = `Hello, I would like to join the ${currentClass} class.\nName: ${name}\nPhone: ${phone}\nLineage: ${lineage}`;
+        let whatsappNumber = "YOUR_WHATSAPP_NUMBER"; // Replace with your actual number
+        let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappLink, "_blank");
+        alert("Thank you! You will be contacted soon.");
+        document.getElementById("joinForm").style.display = "none";
+    }
+
+    // Initialize the default state when page loads
+    window.onload = function() {
+        showClass(1); // Start by displaying the Encounter class by default
+    };
+</script>
+
         
         <h2 class="my-te">LIBRARY</h2>
 
