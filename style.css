@@ -1,4 +1,4 @@
-html { 
+html {
     overflow-x: hidden;
 }
 body {
@@ -6,10 +6,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #ffffff;
     justify-content: center;
     align-items: center;
-    color: #f6ededc9;
+    color: #ffffffef;
 }
 .navbar {
     position: fixed;
@@ -19,11 +18,11 @@ body {
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
-    background: #d64f06;
+    background: #0c0c0b;
     transition: top 0.3s;
 }
 .tithe-button {
-    background: linear-gradient(135deg, #e6712d, #22252a);
+    background: linear-gradient(135deg, #1aee48, #303235);
     color: white;
     border: none;
     padding: 14px 28px;
@@ -86,7 +85,7 @@ body {
     cursor: pointer;
   }
   #sub{
-    color: #efe6e6de;
+    color: #fbf4f4f0;
     background: #0c6019;
   }
 
@@ -106,11 +105,12 @@ body {
 
     .tithe-button {
       width: 100%;
-      font-size: 9px;
+      font-size: 5px;
       padding: 0;
-      max-height: 45px;
+      max-height: 50px;
+      max-width: 100px;
       position: relative;
-      top: 10vh;
+      top: 14vh;
     }
     #paymentForm select,
   #paymentForm input,
@@ -143,11 +143,11 @@ body {
   /* Small to medium devices (phones to tablets) */
   @media (max-width: 600px) {
     .tithe-button {
-      font-size: 15px;
-      width: 50%;
+      font-size: 12px;
+      width: 40%;
       border-radius: 10px;
       position: relative;
-      left: 24%;
+      left: 50%;
     }
     #formHeader{
         color: #0a0a0bec;
@@ -173,7 +173,6 @@ body {
     height: 100%;
     padding: 1em;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
   }
   .text-box {
     color: white;
@@ -207,7 +206,6 @@ body {
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(255,255,255,0.3);
     animation: zoomInOut 3s infinite ease-in-out;
 }
 
@@ -269,7 +267,7 @@ body {
     color: white;
 }
 #sp {
-    color: #e4e5ebc4;
+    color: #e4e5ebf4;
     text-shadow: none;
 }
 .class-content {
@@ -455,7 +453,7 @@ video {
         font-weight: bold;
       }
       #hup{
-        color: #e0e1ebcd;
+        color: #e0e1ebef;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: .8rem;
       }
@@ -480,7 +478,7 @@ video {
                 gap: 0.75rem;
               }
               span{
-                color: #d76418de;
+                color: #f0b288;
               }
               
               .logo {
@@ -541,7 +539,7 @@ video {
 
 
 a {
-    color: #f3600a;
+    color: #f0610f;
     font-weight: 500;
     position: relative;
     text-decoration: none;
@@ -660,16 +658,13 @@ a:hover::after {
                 display: none;
             }
             h2{
-                color: #f5f0ecc5;
+                color: #f5f0ece5;
                 font-weight: lighter;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
             
             /* Improve tabs on smaller screens */
             @media (max-width: 768px) {
-                .church-growth{
-            
-                }
                 .class-tabs {
                     overflow-x: auto;
                     white-space: nowrap;
@@ -712,10 +707,10 @@ a:hover::after {
                 }
                 .responsive-img {
                     width: 100%;
-                    max-width: 200px;
+                    max-width: 180px;
                     height: auto;
                     position: relative;
-                    top: -9vh;
+                    top: 4vh;
                     margin-left: 10%;
                   }
             }
@@ -735,7 +730,7 @@ a:hover::after {
                 }
             
             #classTitle{
-                color: #eae9efda;
+                color: #eae9efe0;
                 font-size: 2.5rem;
                 font-weight: 600;
                 margin-left: -15vw;
@@ -829,7 +824,7 @@ a:hover::after {
                         }
                         
                         .responsive-img {
-                          max-width: 100%;
+                          width: 100%;
                           height: auto;
                         }
                         h3{
@@ -1032,7 +1027,7 @@ a:hover::after {
         grid-template-columns: repeat(5, 1fr); /* Ensures two books per row */
         gap: 0;
         position: relative;
-        left: 28vw;
+        left: 15vw;
         top: 3vh;
     }
     .book-options a{
@@ -1157,7 +1152,7 @@ a:hover::after {
 }
 
 .enrollment-info span{
-    color: #f18282d5;
+    color: #fbf7f7e0;
     font-size: 1.4rem;
     font-weight: 300;
 }
@@ -1324,7 +1319,7 @@ a:hover::after {
     .invite-container blockquote {
       font-style: italic;
       margin: 1rem 0;
-      color: #858181;
+      color: #d8d2d2;
     }
     @media (max-width: 600px) {
       .invite-container {
@@ -1385,7 +1380,7 @@ a:hover::after {
 }
 
 .event-card {
-    background: #ffffff84;
+    background: #fffffffd;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     padding: 20px;
