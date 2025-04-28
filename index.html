@@ -10,7 +10,7 @@
 <body onclick="hideFormOnOutsideClick(event)">
 
   <div class="navbar" id="navbar">
-        <img src="img/glor.png" alt="Logo" class="navbar-logo">
+        <img src="glor.png" alt="Logo" class="navbar-logo">
         <span id="hup">Glory of Christ Church, kawaala</span>
       </div>
       
@@ -34,7 +34,7 @@
                     </button>
                 
                     <div id="paymentForm">
-                      <h3>Select Payment Method</h3>
+                      <h3 class="tih">Select Giving Method</h3>
                       <select id="paymentMethod" onchange="updatePlaceholder()">
                         <option value="mtn">MTN MoMo</option>
                         <option value="airtel">Airtel Money</option>
@@ -42,8 +42,8 @@
                       </select>
                 
                       <input type="text" id="phoneOrEmail" placeholder="Phone Number">
-                      <input type="number" id="amount" placeholder="Amount (e.g. 10000)">
-                      <button onclick="submitPayment()">Submit Payment</button>
+                      <input type="number" id="amount" placeholder="Amount (e.g. 1000)">
+                      <button onclick="submitPayment()" id="sub">Submit tithe & offering</button>
                       <button id="closeForm" onclick="closePaymentForm(event)">Close</button>
                     </div>
                   </div>
@@ -114,13 +114,17 @@
 
         <section class="church-growth">
             <div class="title-with-logo">
-                <img src="img/glot.png" alt="Church Logo" class="logo">
+                <img src="glot.png" alt="Church Logo" class="logo">
                 <h2 class="section-title">GROWTH <span id="sp">Department</span></h2>
               </div>
               
               
             <p class="section-description">
-                "<a href="https://gloryofchristug.org/" target="_blank">GCC</a>" Dedicated to teaching and guiding members 
+                <a href="https://gloryofchristug.org/" target="_blank">
+                    <img src="here.png" alt="Glory of Christ Uganda" style="width:90px; height:auto;">
+                  </a>
+                  <span>Dedicated to teaching and guiding members</span>
+                  
                 to grow in their faith and knowledge of Christ. Through biblical teachings and spiritual mentorship, we aim to 
                 strengthen the body of Christ and nurture a deeper relationship with God.
             </p>            
@@ -129,17 +133,17 @@
 
 <div class="tw">
 <section class="image-section">
-    <img src="img/stud.png" alt="Descriptive Alt Text" class="responsive-img">
+    <img src="stud.png" alt="Descriptive Alt Text" class="responsive-img">
   </section>
 
   <!-- Background Smoke Video -->
   <video class="background-video" autoplay muted loop>
-    <source src="vid/sm3.mp4" type="video/mp4">
+    <source src="sm3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <!-- Thumbnail Image -->
-  <img src="img/kiw.png" alt="Thumbnail" class="thumbnail">
+  <img src="kiw.png" alt="Thumbnail" class="thumbnail">
 
   <!-- Text Display Box -->
   <div class="overlay">
@@ -223,7 +227,7 @@
                 <p id="classDesc"></p>
             </div>
             <div class="class-image">
-                <img id="classImage" src="img/4.jpg" alt="Web Development">
+                <img id="classImage" src="4.jpg" alt="Web Development">
             </div>
         </div>
         
@@ -251,65 +255,60 @@
                 <option value="Elijah">Elijah</option>
                 <option value="Moses">Moses</option>
             </select>
+            <button onclick="submitForm()">Submit</button>
         </div>
-          
+        
     </div>
         
-    <script>
-        let currentClass = "Encounter";
-    
-        function showClass(classNumber) {
-            const content = [
-                { title: "Encounter", desc: "Experience a deep and personal relationship with Christ.", img: "img/4.jpg" },
-                { title: "Transformation", desc: "Grow spiritually and renew your mind through biblical teachings.", img: "img/3.jpg" },
-                { title: "Membership", desc: "Understand the values and beliefs of our church and become an active member.", img: "img/5.jpg" },
-                { title: "Evangelism", desc: "Learn how to effectively share the Gospel with others.", img: "img/am.jpg" },
-                { title: "Christology", desc: "Deepen your faith and become a committed leader with Christ virtues.", img: "img/7.jpg" }
-            ];
-    
-            const selected = content[classNumber - 1];
-            currentClass = selected.title;
-    
-            document.getElementById("classTitle").innerText = currentClass;
-            document.getElementById("classDesc").innerText = selected.desc;
-            document.getElementById("classImage").src = selected.img;
-            document.getElementById("classImage").alt = currentClass;
-            document.getElementById("detailTitle").innerText = currentClass;
-            document.getElementById("detailDesc").innerText = selected.desc;
-    
-            // Update form header text dynamically
-            document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
-        }
-    
-        function submitForm() {
-            let name = document.getElementById("fullName").value;
-            let phone = document.getElementById("phoneNumber").value;
-            let lineage = document.getElementById("lineage").value || "No Lineage";
-    
-            if (!name || !phone) {
-                alert("Please fill in all required fields.");
-                return;
+        <script>
+            let currentClass = "Encounter Class";
+        
+            function showClass(classNumber) {
+                const content = [
+            { title: "Encounter", desc: "Experience a deep and personal relationship with Christ.", img: "4.jpg" },
+            { title: "Transformation", desc: "Grow spiritually and renew your mind through biblical teachings.", img: "3.jpg" },
+            { title: "Membership", desc: "Understand the values and beliefs of our church and become an active member.", img: "5.jpg" },
+            { title: "Evangelism", desc: "Learn how to effectively share the Gospel with others.", img: "img/am.jpg" },
+            { title: "Christology", desc: "Deepen your faith and become a committed leader with Christ virtues.", img: "7.jpg" }
+          ];
+
+                currentClass = content[classNumber - 1].title;
+                document.getElementById("classTitle").innerText = currentClass;
+                document.getElementById("classDesc").innerText = content[classNumber - 1].desc;
+                document.getElementById("classImage").src = content[classNumber - 1].img;
+                document.getElementById("classImage").alt = currentClass;
+                document.getElementById("detailTitle").innerText = currentClass;
+                document.getElementById("detailDesc").innerText = content[classNumber - 1].desc;
             }
-    
-            let message = `Hello, I would like to join the ${currentClass} class.\nName: ${name}\nPhone: ${phone}\nLineage: ${lineage}`;
-            let whatsappNumber = "YOUR_WHATSAPP_NUMBER"; // Replace with your actual number
-            let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
-            window.open(whatsappLink, "_blank");
-            alert("Thank you! You will be contacted soon.");
-    
-            // Optionally clear the form after submission
-            document.getElementById("fullName").value = "";
-            document.getElementById("phoneNumber").value = "";
-            document.getElementById("lineage").value = "";
-        }
-    
-        // Initialize form header when page loads
-        window.onload = function() {
-            document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
-        };
-    </script>
-    
+        
+            function openForm() {
+                document.getElementById("joinForm").style.display = "block";
+            }
+        
+            function submitForm() {
+                let name = document.getElementById("fullName").value;
+                let phone = document.getElementById("phoneNumber").value;
+                let lineage = document.getElementById("lineage").value || "No Lineage";
+                
+                if (!name || !phone) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+        
+                let message = `Hello, I would like to join the ${currentClass}.\nName: ${name}\nPhone: ${phone}\nLineage: ${lineage}`;
+                let whatsappNumber = "YOUR_WHATSAPP_NUMBER"; // Replace with your actual number
+                let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                
+                window.open(whatsappLink, "_blank");
+                alert("Thank you! You will be contacted soon.");
+                document.getElementById("joinForm").style.display = "none";
+
+                // Initialize the page
+               window.onload = function() {
+               document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
+  }
+            }
+        </script>
         
         <h2 class="my-te">LIBRARY</h2>
 
@@ -320,7 +319,7 @@
 <div class="library">     
     <div class="book-grid">
         <div class="book" onclick="toggleOptions(this)">
-            <img src="img/he.jpg" alt="Book 1">
+            <img src="he.jpg" alt="Book 1">
             <div class="book-title">Encounter</div>
             <div class="book-options">
                 <a href="book1.pdf" target="_blank">Read</a>
@@ -328,7 +327,7 @@
             </div>
         </div>
         <div class="book" onclick="toggleOptions(this)">
-            <img src="img/ah.jpg" alt="Book 2">
+            <img src="ah.jpg" alt="Book 2">
             <div class="book-title">Transform</div>
             <div class="book-options">
                 <a href="book2.pdf" target="_blank">Read</a>
@@ -336,7 +335,7 @@
             </div>
         </div>
         <div class="book" onclick="toggleOptions(this)">
-            <img src="img/gd.jpg" alt="Book 3">
+            <img src="gd.jpg" alt="Book 3">
             <div class="book-title">Knowing</div>
             <div class="book-options">
                 <a href="book3.pdf" target="_blank">Read</a>
@@ -344,7 +343,7 @@
             </div>
         </div>
         <div class="book" onclick="toggleOptions(this)">
-            <img src="img/prosper.jpg" alt="Book 3">
+            <img src="prosper.jpg" alt="Book 3">
             <div class="book-title">Prosperity & Life</div>
             <div class="book-options">
                 <a href="book2.pdf" target="_blank">Read</a>
@@ -352,7 +351,7 @@
             </div>
     </div>
     <div class="book" onclick="toggleOptions(this)">
-        <img src="img/bible.jpg" alt="Book 3">
+        <img src="bible.jpg" alt="Book 3">
         <div class="book-title">Bible Study</div>
         <div class="book-options">
             <a href="book2.pdf" target="_blank">Read</a>
@@ -360,7 +359,7 @@
         </div>
 </div>
 <div class="book" onclick="toggleOptions(this)">
-    <img src="img/love.jpg" alt="Book 3">
+    <img src="love.jpg" alt="Book 3">
     <div class="book-title">Love of God</div>
     <div class="book-options">
         <a href="book2.pdf" target="_blank">Read</a>
@@ -397,11 +396,11 @@
 </div>
 
 <div class="cool">
-    <img src="img/qn.png" alt="">
+    <img src="qn.png" alt="">
 </div>
     <div class="ask-question-section">
         <h2>Ask Any Question</h2>
-        <p><span>Have any questions about a class?</span> Feel free to ask, and we will respond as soon as possible.</p>
+        <p><span>Have any questions about a class? Feel free to ask, and we will respond as soon as possible.</p>
     
         <div class="question-form">
             <textarea id="questionText" placeholder="Type your question here..." required></textarea>
@@ -440,13 +439,13 @@
 
     <div class="event-list">
         <div class="event-card">
-            <img src="img/bib.jpg" alt="Event 1">
+            <img src="bib.jpg" alt="Event 1">
             <h3 id="my">Bible Quiz</h3>
             <button onclick="donate('school')">Donate</button>
         </div>
 
         <div class="event-card">
-            <img src="img/feed.jpg" alt="Event 2">
+            <img src="feed.jpg" alt="Event 2">
             <h3 id="my">The Lords table</h3>
             <button onclick="donate('health')">Donate</button>
         </div>
@@ -486,16 +485,16 @@ function donate(eventId) {
         <div>
             <div class="video-container">
                 <video id="mainVideo" controls>
-                    <source src="vid/bil.mp4" type="video/mp4">
+                    <source src="bil.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="video-name" id="videoName">John Doe</div>
         </div>
         <div class="video-list">
-            <video src="vid/bil.mp4" onclick="changeVideo(this, 'John Doe')"></video>
-            <video src="vid/bil.mp4" onclick="changeVideo(this, 'Jane Smith')"></video>
-            <video src="vid/bil.mp4" onclick="changeVideo(this, 'David Brown')"></video>
-            <video src="vid/bil.mp4" onclick="changeVideo(this, 'Emily Davis')"></video>
+            <video src="bil.mp4" onclick="changeVideo(this, 'John Doe')"></video>
+            <video src="bil.mp4" onclick="changeVideo(this, 'Jane Smith')"></video>
+            <video src="bil.mp4" onclick="changeVideo(this, 'David Brown')"></video>
+            <video src="bil.mp4" onclick="changeVideo(this, 'Emily Davis')"></video>
         </div>
     </div>
 
