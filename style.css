@@ -1,4 +1,4 @@
-html {
+html {    .tithe-button 
     overflow-x: hidden;
 }
 body {
@@ -19,11 +19,11 @@ body {
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
-    background: #ffffff;
+    background: #d64f06;
     transition: top 0.3s;
 }
 .tithe-button {
-    background: linear-gradient(135deg, #cc5612, #22252a);
+    background: linear-gradient(135deg, #e6712d, #22252a);
     color: white;
     border: none;
     padding: 14px 28px;
@@ -38,7 +38,7 @@ body {
 }
 
 .tithe-button:hover {
-    background: linear-gradient(135deg, #5e0baf, #1e63e8);
+    background: linear-gradient(135deg, #e27e1b, #262b34);
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
@@ -50,7 +50,7 @@ body {
     display: none;
     margin-top: 20px;
     padding: 15px;
-    background-color: #f3f3f3;
+    background-color: #f3f3f3c2;
     border-radius: 10px;
     max-width: 400px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -58,6 +58,13 @@ body {
     z-index: 1000;
   }
 
+  .tih{
+    color: #0f0e0eef;
+  }
+  input::placeholder {
+    color: #1d1919ad; /* Change this to any color you like */
+    opacity: 1; /* Optional: makes sure it's fully opaque */
+  }
   #paymentForm select,
   #paymentForm input,
   #paymentForm button {
@@ -78,13 +85,23 @@ body {
     width: 100%;
     cursor: pointer;
   }
+  #sub{
+    color: #efe6e6de;
+    background: #0c6019;
+  }
 
   /* Responsive for screens smaller than 600px */
   @media (max-width: 600px) {
     #paymentForm {
-      width: 90%;
+      width: 100%;
+      max-width: 80%;
       left: 5%;
       right: 5%;
+    }
+    #sub{
+        position: relative;
+        top: 2vh;
+        left: 1%;
     }
 
     .tithe-button {
@@ -109,6 +126,7 @@ body {
     cursor: pointer;
     position: relative;
     left: 30%;
+    top: 3vh;
   }
   }
 
@@ -129,7 +147,12 @@ body {
       width: 50%;
       border-radius: 10px;
       position: relative;
-      left: 25%;
+      left: 24%;
+    }
+    #formHeader{
+        color: #0a0a0bec;
+        position: relative;
+        left: -1.5%;
     }
   }
 
@@ -185,12 +208,23 @@ body {
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(255,255,255,0.3);
-  }
+    animation: zoomInOut 3s infinite ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
   @media (max-width: 600px) {
     .text-box {
       font-size: 1.2rem;
       position: relative;
-      top: -1vh;
+      top: -18vh;
     }
     button {
       padding: 0.4em 0.8em;
@@ -201,10 +235,16 @@ body {
       width: 50px;
       height: 50px;
       position: relative;
-      top: 5vh;
+      left: 1%;
+      top: 1vh;
+    }
+    .overlay{
+        max-height: 10%;
     }
   }
     /* Ends of video and text*/
+
+    
 
 .container {
     padding: 20px 5%;
@@ -415,7 +455,7 @@ video {
         font-weight: bold;
       }
       #hup{
-        color: #121e63;
+        color: #e0e1ebcd;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: .8rem;
       }
@@ -677,7 +717,7 @@ a:hover::after {
                     min-width: 300px;
                     height: auto;
                     position: relative;
-                    top: -4vh;
+                    top: -9vh;
                     margin-left: 10%;
                   }
             }
@@ -795,12 +835,16 @@ a:hover::after {
                           height: auto;
                         }
                         h3{
-                            color: #0a0909;
+                            color: #e7e2e2c5;
                         }
 
                         @media (max-width: 600px) {
                             .form-container input, .form-container select {
                                 width: auto;
+                            }
+                            h3{
+                                position: relative;
+                                left: 7%;
                             }
                             .image-section{
                                 margin-top: -20vh;
@@ -977,7 +1021,7 @@ a:hover::after {
 .book:hover .book-options {
     display: flex;
 }
-#bk{
+.tithe-button#bk{
     margin-top: 18vh;
     font-size: 1.7rem;
     font-family: 'Times New Roman', Times, serif;
@@ -998,6 +1042,7 @@ a:hover::after {
     }
     .book-options{
         width: auto;
+        max-width: 70px;
     }
 .book-title {
     font-size: .8rem;
@@ -1402,13 +1447,16 @@ a:hover::after {
         position: relative;
         top: 1vh;
      }
+     #my{
+        position: relative;
+        left: 0%;
 }
 
 .my{
-    color: #0c27a0;
+    color: #eff0f4bb;
 }
 #my{
-    color: #e8edfdde;
+    color: #0c0c0efa;
 }
 /* One column on small screens */
 @media (max-width: 767px) {
@@ -1428,7 +1476,7 @@ a:hover::after {
     }
     .my{
         position: relative;
-        left: -33%;
+        left: -29.5%;
         font-weight: 600;
         font-size: 1.3rem;
         top: 9vh;
