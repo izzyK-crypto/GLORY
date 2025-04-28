@@ -156,6 +156,11 @@ body {
         position: relative;
         left: -1.5%;
     }
+       #klik{
+        position: relative;
+        top: 2vh;
+      }
+  }
   }
 
     /* video en text */
@@ -591,6 +596,7 @@ a:hover::after {
             @media (max-width: 768px) {
                 .section-title {
                     font-size: 1.8rem;
+                    margin-bottom: 1vh;
                 }
                 .church-growth {
                     margin-top: 24vh;
@@ -914,7 +920,7 @@ a:hover::after {
         max-width: 360px;
         margin-top: -1vh;
         position: relative;
-        left: 21%;
+        left: 24%;
     }
     .intro-text {
       font-size: .9rem;
