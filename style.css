@@ -228,14 +228,14 @@ body {
 
   @media (max-width: 768px) {
     .text-box {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       position: relative;
-      top: -36vh;
+      top: -39vh;
     }
     button {
       padding: 0.4em 0.8em;
       position: relative;
-      top: -14vh;
+      top: -34vh;
     }
     .thumbnail {
       width: 50px;
