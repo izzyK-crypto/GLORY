@@ -517,7 +517,6 @@ video {
     transform: translateY(30px);
     animation: fadeInUp 1.2s ease-out forwards;
     z-index: 0;
-    background: #92939679;
 }
 
 .church-growth::before {
