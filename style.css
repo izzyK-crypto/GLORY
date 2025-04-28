@@ -22,7 +22,7 @@ body {
     transition: top 0.3s;
 }
 .tithe-button {
-    background: linear-gradient(135deg, #1aee48, #303235);
+    background: linear-gradient(135deg, #1aee48, #eaae22);
     color: white;
     border: none;
     padding: 14px 28px;
@@ -37,7 +37,7 @@ body {
 }
 
 .tithe-button:hover {
-    background: linear-gradient(135deg, #e27e1b, #262b34);
+    background: linear-gradient(135deg, #e27e1b, #fd923f);
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
@@ -108,6 +108,7 @@ body {
       font-size: 5px;
       padding: 0;
       max-height: 50px;
+      min-width: 320px;
       max-width: 100px;
       position: relative;
       top: 14vh;
@@ -144,10 +145,10 @@ body {
   @media (max-width: 600px) {
     .tithe-button {
       font-size: 12px;
-      width: 40%;
+      width: 100%;
       border-radius: 10px;
       position: relative;
-      left: 50%;
+      left: 4%;
     }
     #formHeader{
         color: #0a0a0bec;
@@ -206,7 +207,6 @@ body {
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
-    animation: zoomInOut 3s infinite ease-in-out;
 }
 
 @keyframes zoomInOut {
@@ -222,19 +222,19 @@ body {
     .text-box {
       font-size: 1.2rem;
       position: relative;
-      top: -18vh;
+      top: -16vh;
     }
     button {
       padding: 0.4em 0.8em;
       position: relative;
-      top: -13vh;
+      top: -17vh;
     }
     .thumbnail {
       width: 50px;
       height: 50px;
       position: relative;
-      left: 1%;
-      top: 1vh;
+      left: -18vw;
+      top: -75vh;
     }
     .overlay{
         max-height: 10%;
@@ -596,7 +596,7 @@ a:hover::after {
                     margin-bottom: 0;
                 }
                 .section-description {
-                    font-size: 1rem;
+                    font-size: rem;
                 }
             }
             @media (max-width: 480px) {
@@ -606,7 +606,7 @@ a:hover::after {
                     top: 5vh;
                 }
                 .section-description {
-                    font-size: 0.9rem;
+                    font-size: 1.1rem;
                     position: relative;
                     top: 5vh;
                 }
@@ -710,7 +710,7 @@ a:hover::after {
                     max-width: 180px;
                     height: auto;
                     position: relative;
-                    top: 4vh;
+                    top: -9vh;
                     margin-left: 10%;
                   }
             }
@@ -769,6 +769,7 @@ a:hover::after {
                            object-fit: cover; /* or contain depending on your needs */
                            border-radius: 10px;
                            margin-left: -4vw;
+                           border: 1px solid #ccc;
             }
             
                         #onl{
