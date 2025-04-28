@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join a Class</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .cla {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .class-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .class-tab {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #eee;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .class-tab.active, .class-tab:hover {
+      background: #3498db;
+      color: white;
+    }
+    .class-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .class-text {
+      flex: 1 1 300px;
+      padding: 10px;
+    }
+    .class-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    .class-details {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .form-container h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .form-container input, .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .form-container button:hover {
+      background: #2980b9;
+    }
+    @media(max-width: 768px) {
+      .class-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cla">
+  <div class="class-tabs">
+    <div class="class-tab active" onclick="showClass(1)">Encounter</div>
+    <div class="class-tab" onclick="showClass(2)">Transformation</div>
+    <div class="class-tab" onclick="showClass(3)">Membership</div>
+    <div class="class-tab" onclick="showClass(4)">Evangelism</div>
+    <div class="class-tab" onclick="showClass(5)">Christology</div>
+  </div>
+
+  <div class="class-container" id="classContent">
+    <div class="class-text">
+      <h2 id="classTitle">Encounter</h2>
+      <p id="classDesc">Experience a deep and personal relationship with Christ.</p>
+    </div>
+    <div class="class-image">
+      <img id="classImage" src="img/4.jpg" alt="Encounter">
+    </div>
+  </div>
+
+  <div class="class-details" id="classDetails">
+    <h2 id="detailTitle">Encounter with Christ</h2>
+    <p id="detailDesc">Experience a deep and personal relationship with Christ.</p>
+  </div>
+
+  <div class="form-container" id="joinForm">
+    <h3 id="formHeader">Request to join Encounter class!</h3>
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+    <select id="lineage">
+      <option value="">Select Lineage (Optional)</option>
+      <option value="No Lineage">No Lineage</option>
+      <option value="Esther">Esther</option>
+      <option value="Daniel">Daniel</option>
+      <option value="Solomon">Solomon</option>
+      <option value="Ephraim">Ephraim</option>
+      <option value="Joseph">Joseph</option>
+      <option value="Deborah">Deborah</option>
+      <option value="David">David</option>
+      <option value="Nehemiah">Nehemiah</option>
+      <option value="Joshua">Joshua</option>
+      <option value="Elijah">Elijah</option>
+      <option value="Moses">Moses</option>
+    </select>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+</div>
+
+<script>
+  let currentClass = "Encounter";
+
+  function showClass(classNumber) {
+    const content = [
+      { title: "Encounter", desc: "Experience a deep and personal relationship with Christ.", img: "img/4.jpg" },
+      { title: "Transformation", desc: "Grow spiritually and renew your mind through biblical teachings.", img: "img/3.jpg" },
+      { title: "Membership", desc: "Understand the values and beliefs of our church and become an active member.", img: "img/5.jpg" },
+      { title: "Evangelism", desc: "Learn how to effectively share the Gospel with others.", img: "img/am.jpg" },
+      { title: "Christology", desc: "Deepen your faith and become a committed leader with Christ virtues.", img: "img/7.jpg" }
+    ];
+
+    const selected = content[classNumber - 1];
+    currentClass = selected.title;
+
+    document.getElementById("classTitle").innerText = selected.title;
+    document.getElementById("classDesc").innerText = selected.desc;
+    document.getElementById("classImage").src = selected.img;
+    document.getElementById("classImage").alt = selected.title;
+    document.getElementById("detailTitle").innerText = selected.title + " with Christ";
+    document.getElementById("detailDesc").innerText = selected.desc;
+    document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
+
+    // Update active tab
+    document.querySelectorAll(".class-tab").forEach(tab => tab.classList.remove("active"));
+    document.querySelectorAll(".class-tab")[classNumber - 1].classList.add("active");
+  }
+
+  function submitForm() {
+    let name = document.getElementById("fullName").value.trim();
+    let phone = document.getElementById("phoneNumber").value.trim();
+    let lineage = document.getElementById("lineage").value || "No Lineage";
+
+    if (!name || !phone) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    let message = `Hello, I would like to join the ${currentClass} class.\nName: ${name}\nPhone: ${phone}\nLineage: ${lineage}`;
+    let whatsappNumber = "YOUR_WHATSAPP_NUMBER"; // <-- Replace with your WhatsApp number
+    let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappLink, "_blank");
+    alert("Thank you! You will be contacted soon.");
+
+    // Clear form after sending
+    document.getElementById("fullName").value = "";
+    document.getElementById("phoneNumber").value = "";
+    document.getElementById("lineage").value = "";
+  }
+
+  // Initialize the page
+  window.onload = function() {
+    document.getElementById("formHeader").innerText = `Request to join ${currentClass} class!`;
+  }
+</script>
+
+</body>
+</html>
