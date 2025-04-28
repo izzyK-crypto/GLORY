@@ -668,7 +668,6 @@ a:hover::after {
             /* Improve tabs on smaller screens */
             @media (max-width: 768px) {
                 .church-growth{
-                    box-shadow: 0 4px 8px #eff3f0ef;
             
                 }
                 .class-tabs {
@@ -713,7 +712,7 @@ a:hover::after {
                 }
                 .responsive-img {
                     width: 100%;
-                    min-width: 300px;
+                    max-width: 200px;
                     height: auto;
                     position: relative;
                     top: -9vh;
