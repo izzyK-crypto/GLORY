@@ -131,6 +131,9 @@ body {
     top: 3vh;
   }
   }
+#klik{
+    margin-top: 2vh;
+}
 
 /* Extra small devices (phones, portrait) */
 @media (max-width: 480px) {
