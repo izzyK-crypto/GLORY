@@ -1130,6 +1130,49 @@ a:hover::after {
     margin-top: 50px;
     border-radius: 10px;
 }
+.slider-container {
+    width: 100%;
+    overflow: hidden; /* Hide anything that goes outside the container */
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    animation: slide 15s linear infinite; /* Adjust timing as needed */
+}
+
+.slider li {
+    padding: 10px;
+    list-style-type: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe animation for sliding */
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-100%);
+    }
+    40% {
+        transform: translateY(-200%);
+    }
+    60% {
+        transform: translateY(-300%);
+    }
+    80% {
+        transform: translateY(-400%);
+    }
+    100% {
+        transform: translateY(-500%);
+    }
+}
 
 /* Dark overlay fox r readability */
 .enrollment-section::before {
